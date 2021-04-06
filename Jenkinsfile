@@ -31,4 +31,4 @@ pipeline {
         }
     }
 }
-© 2021 GitHub, Inc.
+
