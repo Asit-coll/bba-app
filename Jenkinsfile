@@ -12,7 +12,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git branch: 'main', url: 'https://github.com/Asit-coll/bba-app.git'
-                sh "mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar"
+                //sh "mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar"
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
@@ -26,6 +26,7 @@ pipeline {
                 success {
                     junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
+                    sh "aws s3 cp target/bba-app.jar s3://myjenkinsdemo/bba-app/main/"
                 }
             }
         }
