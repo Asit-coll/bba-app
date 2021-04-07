@@ -16,6 +16,9 @@
     </dependency>
   </dependencies>
   <properties>
+   <sonar.projectKey>Asit-coll_main</sonar.projectKey>
+  <sonar.organization>asit-coll</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
